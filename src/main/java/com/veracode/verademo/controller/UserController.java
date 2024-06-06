@@ -50,6 +50,7 @@ import com.veracode.verademo.model.Blabber;
 import com.veracode.verademo.utils.Constants;
 import com.veracode.verademo.utils.User;
 import com.veracode.verademo.utils.UserFactory;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author johnadmin
@@ -111,7 +112,7 @@ public class UserController {
 			target = "";
 		}
 
-		logger.info("Entering showLogin with username " + username + " and target " + target);
+		logger.info("Entering showLogin with username " + StringUtils.normalizeSpace(username) + " and target " + target);
 
 		model.addAttribute("username", username);
 		model.addAttribute("target", target);
